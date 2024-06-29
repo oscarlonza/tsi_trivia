@@ -1,5 +1,4 @@
 import { constants } from '../services/utils/constants.js'
-import { response } from '../services/utils/response.js'
 import { register as register_service, login as login_service } from '../services/user.service.js'
 
 const { status } = constants.response
