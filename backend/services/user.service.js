@@ -2,6 +2,7 @@ import bcrypt from "bcrypt"
 import { response } from "./utils/response.js"
 import User from "../models/user.model.js"
 import { user_validator, login_validator } from "./validators/auth.validator.js"
+import jwt from "jsonwebtoken"
 
 const register = async user_request => {
 
@@ -48,7 +49,15 @@ const login = async login_request => {
 
     if(!valid_password) return response(false, error_message)
 
-    return response(true, 'User logged in', user_db.toJSON());
+    const payload = {
+        id: user_db._id,
+        name: user_db.name,
+        phone: user_db.phone,
+    }
+
+    const token = jwt.sign(payload, process.env.JWT_TOKEN, {expiresIn: '1h'})
+
+    return response(true, 'User logged in', {token});
 }
 
 export { register, login }
