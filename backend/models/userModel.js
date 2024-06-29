@@ -1,5 +1,5 @@
 
-import { Schema, model } from 'mongoose';
+import { Schema, model } from 'mongoose'
 
 const user_schema = Schema({
     name: {
@@ -37,6 +37,6 @@ const user_schema = Schema({
     }
 })
 
-const User = model('user', user_schema);
+const User = model('user', user_schema)
 
-export default User;
+export default User

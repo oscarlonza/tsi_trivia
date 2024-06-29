@@ -1,10 +1,9 @@
-import { Router } from "express";
+import { Router } from "express"
+import { test } from '../controllers/mainController.js'
 
-const router = Router();
+const router = Router()
 
-router.get('/', (req, res) => {
-    res.status(200).json({ server: true });
-});
+router.get('/', test)
 
 
-export default router;
+export default router

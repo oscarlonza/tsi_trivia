@@ -1,16 +1,17 @@
-import express from 'express';
-import dbConnection from './database/db.js';
-import mainRouter from './routes/mainRoute.js';
+import express from 'express'
+import dbConnection from './database/db.js'
+import mainRouter from './routes/mainRoute.js'
+import { not_found } from './controllers/mainController.js'
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000
 
-const app = express();
-app.use(express.json());
+const app = express()
+app.use(express.json())
 
-await dbConnection();
+await dbConnection()
 
-app.use('/api', mainRouter);
+app.use('/api', mainRouter)
 
-app.all('*', (req, res) => res.status(404).json({ msg: 'Not found' }));
+app.all('*', not_found);
 
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+app.listen(port, () => console.log(`Server is running on port ${port}`))
