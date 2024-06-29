@@ -1,7 +1,7 @@
 import express from 'express'
 import dbConnection from './database/db.js'
-import mainRouter from './routes/mainRoute.js'
-import { not_found } from './controllers/mainController.js'
+import mainRouter from './routes/main.route.js'
+import { not_found } from './controllers/main.controller.js'
 
 const port = process.env.PORT || 3000
 
