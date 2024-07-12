@@ -1,0 +1,9 @@
+.groupForm {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.groupForm input {
+    margin: 2.5px 0;
+}

@@ -16,4 +16,8 @@ const login = async (req, res) => {
     res.status(result.process ? status.created : status.bad_request).json(result)
 }
 
-export { register, login }
+const profile = async (req, res) => {
+    res.json({message: 'Profile'})
+}
+
+export { register, login, profile }

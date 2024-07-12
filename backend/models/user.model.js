@@ -23,7 +23,7 @@ const user_schema = Schema({
     },
     email: {
         type: String,
-        unique: true,
+        //unique: true,
         min: 5,
         max: 56
     },
